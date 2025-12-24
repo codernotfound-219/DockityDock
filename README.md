@@ -1,35 +1,45 @@
-Learning Docker
+# Learning Docker
 
-Terminologies:
-1. Container: packaged application with all necessary dependencies and configurations
-    -   portable, efficient
-2. Container Repository: storage for containers
-    -   private (company-based) or public (dockerhub)
+This README provides an introduction to Docker, covering key terminologies, use cases in application development and deployment, and a technical overview of containers.
 
-Use: 
-1. Application development:
-Without containerization, every member of the team would have to individually install specific versions of resources specific to their operating systems to work together.
-Any error that occurs during the installation process, results in hours wasted figuring a fix.
-With containerization, the container acts as its own isolated environment (linux based image). It is packaged with all needed configuration and resource versions.
-One docker command can be used to the install the application regardless of the operating system.
+## Terminologies:
 
-2. Application Deployment:
-Development team develops artifacts along with documentation on their configuration specific to the server on which it is to be deployed. (JAR file)
-The operations team receives these artifacts and sets up the environment.
-Every resource must be installed on the Operating System of the server. (Could result in version conflict)
-Requires a textual guide for deployment. (Could result in misunderstandings)
+*   **Container**: A packaged application with all necessary dependencies and configurations.
+    *   Portable and efficient.
+*   **Container Repository**: Storage for containers.
+    *   Can be private (company-based) or public (e.g., Docker Hub).
 
-With containers:
-Developers and operations work together to package the application.
-Run the docker command in the server, and its done!
+## Use Cases:
 
+### 1. Application Development:
 
-Technical Understanding:
-1. Container
-    - Layers of images
-    - Mostly Linux Base Images - typically alpine (small in size)
-    - Application image goes on top
+**Without Containerization:**
+*   Every team member would need to individually install specific versions of resources tailored to their operating systems to collaborate effectively.
+*   Errors during the installation process could lead to hours wasted on troubleshooting.
 
-    // put in a table:
-    postgres - application image
-    alpine - base image
+**With Containerization:**
+*   The container acts as its own isolated environment (typically Linux-based). It is packaged with all required configurations and resource versions.
+*   A single Docker command can be used to install and run the application, regardless of the host operating system.
+
+### 2. Application Deployment:
+
+**Traditional Deployment:**
+*   Development teams create artifacts along with documentation detailing their configuration for specific deployment servers (e.g., a JAR file).
+*   Operations teams receive these artifacts and set up the environment.
+*   Every resource must be installed directly on the server's operating system, which can lead to version conflicts.
+*   Relies on textual deployment guides, which can result in misunderstandings.
+
+**With Containers:**
+*   Developers and operations teams collaborate to package the application within a container.
+*   Running a simple Docker command on the server deploys the application instantly.
+
+## Technical Understanding:
+
+### 1. Container Structure:
+
+Containers are built from layers of images. They typically start with a small **Linux Base Image** (e.g., Alpine) for efficiency, with the **Application Image** layered on top.
+
+| Component        | Description      |
+| :--------------- | :--------------- |
+| `postgres`       | Application Image |
+| `alpine`         | Base Image       |

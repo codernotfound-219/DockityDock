@@ -1,6 +1,6 @@
 # Learning Docker
 
-This README provides an introduction to Docker, covering key terminologies, use cases in application development and deployment, and a technical overview of containers.
+This repository is a dedicated learning log for my Docker studies, bridging the gap between theoretical concepts and hands-on practice. From understanding images and containers to deploying multi-service applications, this document records every milestone, challenge, and solution I’ve encountered along the way.
 
 ## Terminologies:
 
@@ -39,7 +39,40 @@ This README provides an introduction to Docker, covering key terminologies, use 
 
 Containers are built from layers of images. They typically start with a small **Linux Base Image** (e.g., Alpine) for efficiency, with the **Application Image** layered on top.
 
-| Component        | Description      |
-| :--------------- | :--------------- |
-| `postgres`       | Application Image |
-| `alpine`         | Base Image       |
+| Component  | Description       |
+| :--------- | :---------------- |
+| `postgres` | Application Image |
+| `alpine`   | Base Image        |
+![[Pasted image 20251224191110.png]]
+All the hashes seen above indicate layers!
+
+### 2. Image vs Container:
+
+- Image:
+	- The actual package
+	- **Artifact**, that can be moved around
+	- **NOT RUNNING**
+- Container:
+	- Once an Image is running locally, it becomes a **Container**.
+	- Container is the running environment for the Image.
+
+
+## Docker vs Virtual Machine
+
+| Layers of Operating System |
+| -------------------------- |
+| Applications               |
+| OS Kernel                  |
+| Hardware                   |
+- Docker virtualizes the **Application** layer
+	- Much smaller in size (MB)
+	- Fast start
+	- **Not compatible** across host OS systems. (A linux based docker image will not be compatible on windows!)
+	- **Workaround:** Docker toolbox -> abstracts the kernel too.
+- Virtual machine virtualizes the **Application + OS kernel**
+	- Much larger in size (GB)
+	- Slow start
+	- Compatible with any OS host
+
+
+LEFT AT 'Main Docker Commands....'

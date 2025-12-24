@@ -43,6 +43,7 @@ Containers are built from layers of images. They typically start with a small **
 | :--------- | :---------------- |
 | `postgres` | Application Image |
 | `alpine`   | Base Image        |
+
 ![[Pasted image 20251224191110.png]]
 All the hashes seen above indicate layers!
 

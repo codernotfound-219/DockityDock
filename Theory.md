@@ -70,3 +70,8 @@ All the hashes seen above indicate layers!
 	- Much larger in size (GB)
 	- Slow start
 	- Compatible with any OS host
+
+
+## Container Port vs Host Port
+- A binding is created between the ports of container port and host port. (Containers port 5000 -> Host's port 5000)
+- A conflict occurs if the containers port that you want to connect to is already in use at the host's end.

@@ -7,4 +7,4 @@ This repository is a dedicated learning log for my Docker studies, bridging the 
 
 1. [[Theory]]
 2. [[Basic Commands]]
-3. 
+3. [[Debugging a Container]]

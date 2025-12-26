@@ -5,5 +5,6 @@ This repository is a dedicated learning log for my Docker studies, bridging the 
 
 ## Table of Contents:
 
-1. [Theory](Theory):
-2. [Basic Commands](Basic Commands)
+1. [[Theory]]
+2. [[Basic Commands]]
+3. 

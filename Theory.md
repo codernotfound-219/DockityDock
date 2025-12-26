@@ -50,6 +50,7 @@ All the hashes seen above indicate layers!
 	- **NOT RUNNING**
 - Container:
 	- Once an Image is running locally, it becomes a **Container**.
+	- Has its own virtual file system, with its own abstraction of an operating system. (Different from the Host machine)
 	- Container is the running environment for the Image.
 
 

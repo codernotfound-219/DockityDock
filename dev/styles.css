@@ -1,60 +1,170 @@
+/* CSS Variables for easy theming */
+:root {
+    --bg-color: #f7f8fa;
+    --card-bg: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --accent-color: #4fd1c5; /* A modern teal accent */
+    --divider-color: #e2e8f0;
+    --chip-bg: #edf2f7;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
-.card {
-    background-color: white;
-    width: 400px;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* The Main Card - Soft shadows for depth */
+.profile-card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    /* A modern, diffused shadow */
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 4px 6px -2px rgba(0, 0, 0, 0.025);
 }
 
-.label {
+/* Header Section */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Form Fields */
+.field-group {
+    margin-bottom: 1rem;
+}
+
+label {
     display: block;
-    font-size: 0.75rem;
-    color: #888;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    margin-top: 15px;
+    letter-spacing: 0.05em;
 }
 
-/* Base style for all inputs */
-.editable-field {
-    width: 95%; /* Full width minus padding */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
+/* Innovative Input Style: Underline with animation */
+.modern-input {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1.125rem;
     font-family: inherit;
-    transition: border-color 0.2s;
+    font-weight: 500;
+    color: var(--text-primary);
+    border: none;
+    border-bottom: 2px solid var(--divider-color);
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
-.editable-field:focus {
-    border-color: #007bff;
+.modern-input:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
+    background: linear-gradient(to bottom, transparent 95%, var(--accent-color) 95%);
+}
+
+/* The thin dividers from the reference image */
+.divider {
+    height: 1px;
+    background-color: var(--divider-color);
+    margin: 1.5rem 0;
+}
+
+/* Interests/Hobbies "Chips" Section */
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+/* The editable chip style */
+.hobby-chip {
+    background-color: var(--chip-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 500;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    /* Making the input inside look like part of the chip */
+    display: flex;
+    align-items: center;
+}
+
+.hobby-chip:focus-within {
+    border-color: var(--accent-color);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(79, 209, 197, 0.2);
+}
+
+.chip-input {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: inherit;
+    padding: 0;
+    width: auto;
+    min-width: 60px; /* Ensure it's always clickable */
+}
+
+.chip-input:focus {
     outline: none;
 }
 
-/* Specific style for the Name input to mimic an H1 */
-.large {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #222;
+/* Optional Button Styling */
+.action-area {
+    margin-top: 2.5rem;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.save-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--divider-color);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-li {
-    margin-bottom: 10px;
+.save-btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
 }

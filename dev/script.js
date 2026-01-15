@@ -12,19 +12,25 @@ const userData = {
 
 const nameElement = document.getElementById('name');
 const emailElement = document.getElementById('email');
-const hobbiesList = document.getElementById('hobbies-list');
+const hobbiesContainer = document.getElementById('hobbies-list');
 
 nameElement.value = userData.fullName;
 emailElement.value = userData.email;
 
 userData.hobbies.forEach(hobby => {
-  const li = document.createElement('li');
+  const chipWrapper = document.createElement('div');
+  chipWrapper.className = 'hobby-chip';
+
   const input = document.createElement('input');
-
   input.type = "text";
-  input.className = "editable-field";
+  input.className = "chip-input";
   input.value = hobby;
+  input.style.width = (hobby.length + 1) + 'ch';
 
-  li.appendChild(input);
-  hobbiesList.appendChild(li);
+  input.addEventListener('input', function() {
+    this.style.width = (this.value.length + 1) + 'ch';
+  });
+
+  chipWrapper.appendChild(input);
+  hobbiesContainer.appendChild(chipWrapper);
 })

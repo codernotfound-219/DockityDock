@@ -17,6 +17,8 @@
 - returns the id of the container.
 	`docker start 'id'`: starts the container, for the image (unique id)    // works on existing containers
 	`docker stop 'id'`: stops the container, for the image (unique id)        // works on existing containers
+- `docker run`: to create a new container
+- `docker start`: to restart a stopped container
 
 `docker run redis:4.0`:
 - pulls the image from dockerhub (v-4.0) and runs the container.

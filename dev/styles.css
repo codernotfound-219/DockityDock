@@ -10,34 +10,44 @@ body {
 
 .card {
     background-color: white;
-    width: 350px;
+    width: 400px;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
 }
 
-.profile-header h1 {
-    margin-bottom: 0.5rem;
+.label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    margin-top: 15px;
+}
+
+/* Base style for all inputs */
+.editable-field {
+    width: 95%; /* Full width minus padding */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
     color: #333;
+    font-family: inherit;
+    transition: border-color 0.2s;
 }
 
-.profile-header p {
-    color: #666;
-    margin-top: 0;
-    font-size: 0.9rem;
+.editable-field:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-.section {
-    margin-top: 2rem;
-    text-align: left;
-}
-
-.section h2 {
-    font-size: 1.2rem;
-    color: #444;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
+/* Specific style for the Name input to mimic an H1 */
+.large {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
 }
 
 ul {
@@ -46,10 +56,5 @@ ul {
 }
 
 li {
-    background: #e9ecef;
-    margin: 5px 0;
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: #495057;
-    font-size: 0.95rem;
+    margin-bottom: 10px;
 }

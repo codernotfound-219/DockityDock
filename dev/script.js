@@ -12,13 +12,19 @@ const userData = {
 
 const nameElement = document.getElementById('name');
 const emailElement = document.getElementById('email');
-const hobbieslistElement = document.getElementById('hobbies-list');
+const hobbiesList = document.getElementById('hobbies-list');
 
-nameElement.textContent = userData.fullName;
-emailElement.textContent = userData.email;
+nameElement.value = userData.fullName;
+emailElement.value = userData.email;
 
 userData.hobbies.forEach(hobby => {
   const li = document.createElement('li');
-  li.textContent = hobby;
-  hobbieslistElement.appendChild(li);
+  const input = document.createElement('input');
+
+  input.type = "text";
+  input.className = "editable-field";
+  input.value = hobby;
+
+  li.appendChild(input);
+  hobbiesList.appendChild(li);
 })

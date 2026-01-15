@@ -15,8 +15,8 @@
 `docker run -d redis`:
 - creates the container for redis in detached mode (no interface).
 - returns the id of the container.
-	`docker start 'id'`: starts the container, for the image (unique id)
-	`docker stop 'id'`: stops the container, for the image (unique id)
+	`docker start 'id'`: starts the container, for the image (unique id)    // works on existing containers
+	`docker stop 'id'`: stops the container, for the image (unique id)        // works on existing containers
 
 `docker run redis:4.0`:
 - pulls the image from dockerhub (v-4.0) and runs the container.
@@ -24,4 +24,7 @@
 - multiple containers are accessed via unique ports.
 
 `docker run -p6000:6379 redis`:
-- host's port of 6000 is binded to container's port of 6379, and redis container is run.
+- host's port of 6000 is binded to container's port of 6379, and redis container is .
+
+`docker run -d -p6001:6379 --name redis-older redis:5.0`:
+- run redis (v5.0) in detached mode with a given name 'redis-older'

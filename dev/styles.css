@@ -93,13 +93,6 @@ label {
     background: linear-gradient(to bottom, transparent 95%, var(--accent-color) 95%);
 }
 
-/* The thin dividers from the reference image */
-.divider {
-    height: 1px;
-    background-color: var(--divider-color);
-    margin: 1.5rem 0;
-}
-
 /* Interests/Hobbies "Chips" Section */
 .chips-container {
     display: flex;

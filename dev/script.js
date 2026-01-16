@@ -12,7 +12,7 @@ const userData = {
 
 const nameElement = document.getElementById('name');
 const emailElement = document.getElementById('email');
-const hobbiesContainer = document.getElementById('hobbies-list');
+const hobbiesList = document.getElementById('hobbies-container');
 
 nameElement.value = userData.fullName;
 emailElement.value = userData.email;
@@ -25,6 +25,7 @@ userData.hobbies.forEach(hobby => {
   input.type = "text";
   input.className = "chip-input";
   input.value = hobby;
+
   input.style.width = (hobby.length + 1) + 'ch';
 
   input.addEventListener('input', function() {
@@ -32,5 +33,5 @@ userData.hobbies.forEach(hobby => {
   });
 
   chipWrapper.appendChild(input);
-  hobbiesContainer.appendChild(chipWrapper);
-})
+  hobbiesList.appendChild(chipWrapper);
+});

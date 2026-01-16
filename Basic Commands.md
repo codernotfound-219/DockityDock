@@ -30,3 +30,10 @@
 
 `docker run -d -p6001:6379 --name redis-older redis:5.0`:
 - run redis (v5.0) in detached mode with a given name 'redis-older'
+
+`docker network ls`:
+- lists all available docker networks
+
+`docker network create <network name>`:
+- create a docker network with the given network name.
+

@@ -75,3 +75,8 @@ All the hashes seen above indicate layers!
 ## Container Port vs Host Port
 - A binding is created between the ports of container port and host port. (Containers port 5000 -> Host's port 5000)
 - A conflict occurs if the containers port that you want to connect to is already in use at the host's end.
+
+# Docker Network
+![[Pasted image 20260116133438.png]]
+- Two containers belonging to the same network can communicate with each other without the need for an intermediate.
+- Say we have an application running locally on the host, like node.js, it can connect to this docker network from the outside via a port.
